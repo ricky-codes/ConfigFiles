@@ -77,10 +77,12 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git z nvm)
+plugins=(git z nvm zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
+zstyle ':autocomplete:*' default-context history-incremental-search-backward
+export FZF_DEFAULT_OPTS='--height 30% --layout=reverse --border'
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -111,6 +113,8 @@ source $ZSH/oh-my-zsh.sh
 alias ls="colorls -1"
 alias lsa="colorls -a -1"
 alias lsd="colorls -d"
+
+alias coding="~/bash_scripts/open_tmux_env.sh"
 
 alias zshconfig="code ~/.zshrc"
 
